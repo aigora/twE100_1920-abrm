@@ -5,7 +5,7 @@ Se trata de simular la recepción o secretaría de un hospital cualquiera a la q
 
 Brian Tomico Fernandez
 Mario Sánchez García ( mariooot13 )
-Raul ricaldi
+Raul Ricaldi Esquivel (RaulR16)
 Andrés Torrejón Palomo
 
 ## Objetivos del trabajo
