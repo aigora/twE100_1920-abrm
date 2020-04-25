@@ -2,6 +2,7 @@
 //PARTICIPANTES: Mario Sánchez García (55452), Brian Tomico Fernández (55487), Raul Ricaldi Esquivel (55423), Andres Torrejón Palomo (55489).
 
 #include <stdio.h>
+#include<string.h>
 
 int Introduccion(void);
 void LimpiarBufer (void);    //Esta fucnión limpia el bufer
