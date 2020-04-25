@@ -7,7 +7,7 @@ int Introduccion(void);
 void LimpiarBufer (void);    //Esta fucnión limpia el bufer
 int Menu();		      //Esta función abre el menu de opciones disponibles en la recepción
 void FCierre (void);	      //Esta función se usa al finalizar el programa
-int Salir();
+int FSalir();
 
 int main()
 {
@@ -30,15 +30,9 @@ int main()
 	
 }
 
-int Salir()
+int Introduccion()
 {
-	return 69;
-}
-
- void LimpiarBufer (void)
-{
-	char c;
-	while((c = getchar())!= EOF && c!= '\n');
+  printf("Buenos d%cas, se encuentra en la recepci%cn del hospital ABRM, %cQu%c desea hacer?\n",161,162,168,130);      
 }
 
 int Menu()
@@ -70,12 +64,35 @@ int Menu()
   }
   }while(opcion!='A' || opcion!='a' || opcion!='B' || opcion!='b' || opcion!='C' || opcion!='c' || opcion!='D' || opcion!='d');
 }
-  
-int Introduccion()
+
+float CompararEleccion (int eleccion)
 {
-  printf("Buenos d%cas, se encuentra en la recepci%cn del hospital ABRM, %cQu%c desea hacer?\n",161,162,168,130);      
+switch(eleccion)
+{
+	case 0:
+	FConsulta();
+	break;
+	case 1:
+	FHistorial();
+	break;
+	case 2:
+	FUrgencias();
+	break;
+	case 3:
+	FSalir();
+	break;
+}}
+	
+int FSalir()
+{
+	return 69;
 }
-	 
+
+void LimpiarBufer (void)
+{
+	char c;
+	while((c = getchar())!= EOF && c!= '\n');
+}
 
 void FCierre (void)
 {
@@ -84,6 +101,7 @@ void FCierre (void)
 //	c = getchar ();
 	getchar ();
 }
-  
+
+
   
   
