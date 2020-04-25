@@ -12,6 +12,7 @@ Andrés Torrejón Palomo (AndrescorporationSL)
 ## Objetivos del trabajo
 
 Lista de los objetivos que se persiguen con el trabajo propuesto:
+
 Asemejar lo máximo posible la situación de una recepción de hospital:
 -Simular la consulta de un doctor.
 -Simular una recepción dónde se facilitan los datos de un paciente.
