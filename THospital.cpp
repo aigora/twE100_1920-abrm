@@ -1,3 +1,3 @@
 //TRABAJO RECEPCION DE HOSPITAL
-//PARTICIPANTES: Mario S·nchez GarcÌa, Brian Tomico Fern·ndez, Raul ricaldi, Andres TorrejÛn Palomo
-
+//PARTICIPANTES: Mario S√°nchez Garc√≠a, Brian Tomico Fern√°ndez, Raul ricaldi, Andres Torrej√≥n Palomo
+#include <stdio.h>
