@@ -6,11 +6,11 @@ Se trata de simular la recepción o secretaría de un hospital cualquiera a la q
 Brian Tomico Fernandez
 Mario Sánchez García ( mariooot13 )
 Raul Ricaldi Esquivel (RaulR16)
-Andrés Torrejón Palomo
+Andrés Torrejón Palomo (AndrescorporationSL)
 
 ## Objetivos del trabajo
 
 Lista de los objetivos que se persiguen con el trabajo propuesto.
 Conseguir que la acción del simulador se parezca lo máximo posible a una situación real.
 Recoger los datos del paciente o visitante y comprobar su historial médico.
-Recetar un cierto diagnóstico al paciente sobre la posible enfermedad a tratar.
+Hacer un cierto diagnóstico al paciente sobre la posible enfermedad a tratar.
