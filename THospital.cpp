@@ -44,7 +44,19 @@ int main()
 {
   int bucle=0;
 
- 
+ void LimpiarBufer (void)
+{
+	char c;
+	while((c = getchar())!= EOF && c!= '\n');
+}
+  
+void FCierre (void)
+{
+//	char c;
+	puts ("\n\nPulse \256retorno de carro\257 para cerrar la ventana...");
+//	c = getchar ();
+	getchar ();
+}
   
   
   
