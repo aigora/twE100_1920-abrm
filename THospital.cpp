@@ -44,13 +44,13 @@ int Salir()
 int Menu()
 {
   char opcion;
+  do{
   printf("A.Acceder a consulta\n");
   printf("B.Buscar datos de un paciente\n");
   printf("C.Acceder a Urgencias\n");
   printf("D.Salir\n");
   scanf("%c",&opcion);
-  
-  do{
+
   switch(opcion)//En este switch se elige la opcion que se desea
   {
     case'A':case'a':
