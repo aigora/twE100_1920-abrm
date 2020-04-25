@@ -2,7 +2,7 @@
 //PARTICIPANTES: Mario Sánchez García (55452), Brian Tomico Fernández (55487), Raul Ricaldi Esquivel (55423), Andres Torrejón Palomo (55489).
 
 #include <stdio.h>
-	
+	 int Introduccion(void);
 	 void LimpiarBufer (void);    //Esta fucnión limpia el bufer
 	 int menu();		      //Esta función abre el menu de opciones disponibles en la recepción
 	 void FCierre (void);	      //Esta función se usa al finalizar el programa
@@ -40,7 +40,7 @@ int Salir()
 	while((c = getchar())!= EOF && c!= '\n');
 }
 
-int Menu();
+int Menu()
 {
   char opcion;
   printf("A.Acceder a consulta\n");
@@ -65,10 +65,7 @@ int Menu();
   break;
   default:
      printf("Escoja una opci%cn v%clida",162,160);
-  }while(opcion!='A' || opcion!='a' || opcion!='B' || opcion!='b' || opcion!='C' || opcion!='c' || opcion!='D' || opcion!='d');
- 
-  
-  
+  }while(opcion!='A' || opcion!='a' || opcion!='B' || opcion!='b' || opcion!='C' || opcion!='c' || opcion!='D' || opcion!='d')
 }
   
 int Introduccion()
@@ -76,11 +73,7 @@ int Introduccion()
   printf("Buenos d%cas, se encuentra en la recepci%cn del hospital ABRM, %cQu%c desea hacer?\n",161,162,168,130);      
 }
 	 
-	 
-	 
 
-
-  
 void FCierre (void)
 {
 //	char c;
