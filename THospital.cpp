@@ -5,7 +5,7 @@
 
 int Introduccion()
 {
-  printf("Buenos d%cas, se encuentra en la recepci%cn del hospital ABRM,%cQu%c desea hacer?\n",161,162,168,130);
+  printf("Buenos d%cas, se encuentra en la recepci%cn del hospital ABRM, %cQu%c desea hacer?\n",161,162,168,130);
   switch(opcion)
   {
     case '1':
