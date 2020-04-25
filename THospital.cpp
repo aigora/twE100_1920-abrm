@@ -67,6 +67,7 @@ int Menu()
   break;
   default:
      printf("Escoja una opci%cn v%clida",162,160);
+  }
   }while(opcion!='A' || opcion!='a' || opcion!='B' || opcion!='b' || opcion!='C' || opcion!='c' || opcion!='D' || opcion!='d');
 }
   
