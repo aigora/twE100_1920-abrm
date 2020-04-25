@@ -2,11 +2,12 @@
 //PARTICIPANTES: Mario Sánchez García (55452), Brian Tomico Fernández (55487), Raul Ricaldi Esquivel (55423), Andres Torrejón Palomo (55489).
 
 #include <stdio.h>
-	 int Introduccion(void);
-	 void LimpiarBufer (void);    //Esta fucnión limpia el bufer
-	 int menu();		      //Esta función abre el menu de opciones disponibles en la recepción
-	 void FCierre (void);	      //Esta función se usa al finalizar el programa
-	int salir();
+
+int Introduccion(void);
+void LimpiarBufer (void);    //Esta fucnión limpia el bufer
+int Menu();		      //Esta función abre el menu de opciones disponibles en la recepción
+void FCierre (void);	      //Esta función se usa al finalizar el programa
+int Salir();
 
 int main()
 {
@@ -50,7 +51,8 @@ int Menu()
   scanf("%c",&opcion);
   
   do{
-  switch(opcion)			//En este switch se elige la opcion que se desea
+  switch(opcion)//En este switch se elige la opcion que se desea
+  {
     case'A':case'a':
       return 0;
   break;
@@ -65,7 +67,7 @@ int Menu()
   break;
   default:
      printf("Escoja una opci%cn v%clida",162,160);
-  }while(opcion!='A' || opcion!='a' || opcion!='B' || opcion!='b' || opcion!='C' || opcion!='c' || opcion!='D' || opcion!='d')
+  }while(opcion!='A' || opcion!='a' || opcion!='B' || opcion!='b' || opcion!='C' || opcion!='c' || opcion!='D' || opcion!='d');
 }
   
 int Introduccion()
