@@ -3,7 +3,7 @@
 Se trata de simular la recepción o secretaría de un hospital cualquiera a la que un paciente enfermo o alguien que visita un paciente acude para recibir información o darla sobre su caso posteriormente a tratar.
 ## Integrantes del equipo
 
-Brian Tomico Fernandez
+Brian Tomico Fernández (briantf6)
 Mario Sánchez García ( mariooot13 )
 Raul Ricaldi Esquivel (RaulR16)
 Andrés Torrejón Palomo (AndrescorporationSL)
