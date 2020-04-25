@@ -1,16 +1,18 @@
 # RECEPCION DE HOSPITAL
 
-Se trata de simular la recepción o secretaría de un hospital cualquiera a la que un paciente enfermo o alguien que visita un paciente acude para recibir información o darla sobre su caso posteriormente a tratar.
+Se trata de simular la recepción o secretaría de un hospital a la que llega una persona enferma; o bien, alguien que llega para visitar a un paciente.
+
 ## Integrantes del equipo
 
-Brian Tomico Fernández (briantf6)
+Brian Tomico Fernandez
 Mario Sánchez García ( mariooot13 )
 Raul Ricaldi Esquivel (RaulR16)
 Andrés Torrejón Palomo (AndrescorporationSL)
 
 ## Objetivos del trabajo
 
-Lista de los objetivos que se persiguen con el trabajo propuesto.
-Conseguir que la acción del simulador se parezca lo máximo posible a una situación real.
-Recoger los datos del paciente o visitante y comprobar su historial médico.
-Hacer un cierto diagnóstico al paciente sobre la posible enfermedad a tratar.
+Lista de los objetivos que se persiguen con el trabajo propuesto:
+Asemejar lo máximo posible la situación de una recepción de hospital:
+-Simular la consulta de un doctor.
+-Simular una recepción dónde se facilitan los datos de un paciente.
+-Simular el apartado de urgencias según la gravedad de la situación.
