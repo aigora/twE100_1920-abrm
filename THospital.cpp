@@ -2,8 +2,45 @@
 //PARTICIPANTES: Mario Sánchez García (55452), Brian Tomico Fernández (55487), Raul Ricaldi Esquivel (55423), Andres Torrejón Palomo (55489).
 
 #include <stdio.h>
+	
+	 void LimpiarBufer (void);    //Esta fucnión limpia el bufer
+	 int menu();		      //Esta función abre el menu de opciones disponibles en la recepción
+	 void FCierre (void);	      //Esta función se usa al finalizar el programa
+	int salir();
 
-int menu();
+int main()
+{
+  int bucle=0;
+  int eleccion;	
+	do{
+	Introduccion();
+	Menu();
+	eleccion=Menu();
+		
+	if(eleccion==3){
+		bucle=Salir();
+	}
+		
+	}while(bucle!=0);
+	
+	FCierre();
+	return 69;
+		
+	
+}
+
+int Salir()
+{
+	return 69;
+}
+
+ void LimpiarBufer (void)
+{
+	char c;
+	while((c = getchar())!= EOF && c!= '\n');
+}
+
+int Menu();
 {
   char opcion;
   printf("A.Acceder a consulta\n");
@@ -13,7 +50,7 @@ int menu();
   scanf("%c",&opcion);
   
   do{
-  switch(opcion)
+  switch(opcion)			//En este switch se elige la opcion que se desea
     case'A':case'a':
       return 0;
   break;
@@ -28,7 +65,7 @@ int menu();
   break;
   default:
      printf("Escoja una opci%cn v%clida",162,160);
-  }while(opcion!='A' || opcion!='a' || opcion!='B' || opcion!='b' || opcion!='C' || opcion!='c' || 
+  }while(opcion!='A' || opcion!='a' || opcion!='B' || opcion!='b' || opcion!='C' || opcion!='c' || opcion!='D' || opcion!='d');
  
   
   
@@ -36,19 +73,13 @@ int menu();
   
 int Introduccion()
 {
-  printf("Buenos d%cas, se encuentra en la recepci%cn del hospital ABRM, %cQu%c desea hacer?\n",161,162,168,130);
-  
-      
+  printf("Buenos d%cas, se encuentra en la recepci%cn del hospital ABRM, %cQu%c desea hacer?\n",161,162,168,130);      
 }
-int main()
-{
-  int bucle=0;
+	 
+	 
+	 
 
- void LimpiarBufer (void)
-{
-	char c;
-	while((c = getchar())!= EOF && c!= '\n');
-}
+
   
 void FCierre (void)
 {
