@@ -2,6 +2,74 @@
 //PARTICIPANTES: Mario Sánchez García (55452), Brian Tomico Fernández (55487), Raul Ricaldi Esquivel (55423), Andres Torrejón Palomo (55489).
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define N 100
+
+
+typedef struct
+{
+	char nombre[N];
+	char apellido1[N];
+	char apellido2[N];
+	char DNI[14];
+}Tpaciente;
+
+
+int main()
+{
+	Tpaciente Dato;
+	char comparar[N];
+	char leer[N];
+	
+	FILE*pf;	
+	pf=fopen("Datosgenerales","r+");						//ABRIMOS LA LISTA DE DATOS GENERALES PARA LEER 
+	printf("Introduzca el DNI de la persona que busca ");	
+	scanf("%s",&Dato.DNI);
+	fflush(stdin);
+	
+	while (fgets(comparar, 100, pf) != NULL)									//LEER HASTA EL FINAL DEL ARCHIVO
+	{
+		
+		fscanf(pf,"%s",comparar);					//COMPARAMOS EL STRING INTRODUCIDO CON LOS DE LA LISTA DE DATOS
+		if(strcmp(comparar,Dato.DNI)==0)					
+		{
+			printf("El paciente ha sido encontrado");       //SI EL STRING COINCIDE EL PACIENTE ESTA O HA ESTADO EN EL HOSPITAL
+			break;
+		}
+		else
+		{
+			printf("el paciente no ha sido encontrado");
+			break;
+		}
+	}
+	
+	printf("%s",comparar);
+	fclose(pf);
+	
+	
+return 304;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include <stdio.h>
 #include<string.h>
 #define N 100
 
@@ -125,6 +193,6 @@ void FCierre (void)
 	getchar ();
 }
 
-
+*/
   
   
