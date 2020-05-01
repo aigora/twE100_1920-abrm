@@ -11,7 +11,7 @@ typedef struct
 	char apellido1[N];
 	char apellido2[N];
 	char fecha;
-	char DNI[N];
+	char DNI[10];
 }TPaciente;
 
 int Introduccion(void);
