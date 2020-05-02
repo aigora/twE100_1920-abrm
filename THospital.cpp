@@ -195,4 +195,11 @@ void FCierre (void)
 
 */
   
-  
+  char FRepeticion (void)
+{
+	char tecla;
+	puts ("\n\250Desea volver a ejecutar el programa?");
+	scanf ("%c", &tecla);
+	fflush(stdin);
+	return tecla;
+}
