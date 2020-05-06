@@ -17,7 +17,7 @@ typedef struct
 
 void FIntroduccion();
 int FMenu();
-void FBuscar();
+int FBuscar();
 int FRepeticion();
 void LimpiarBufer();
 
@@ -25,6 +25,7 @@ int main()
 {	
 int bucle=1;
 int eleccion;
+int busqueda;
 	
 	FIntroduccion();
 
@@ -37,12 +38,18 @@ int eleccion;
 			printf("\nentrar a consulta\n");
 			break;
 		case 2:
-			FBuscar();
+			busqueda = FBuscar();
+			if(busqueda == 2)
+				eleccion=1;
+			if(busqueda == 0)
+			{	
 			break;
+			}
 		case 3:
 			printf("\n Entrar a urgencias\n");
 			break;
 	}
+	
 	bucle=FRepeticion();
 }
 
@@ -75,12 +82,13 @@ int FMenu()							//ESTA FUNCION ABRE EL MENU
 return opcion;
 }
 
-void FBuscar()									//ESTA FUCNION BUSCA PACIENTES
+int FBuscar()									//ESTA FUCNION BUSCA PACIENTES
 {
 	TPaciente Dato;
 	char comparar[N];
+	char tecla;
 	
-		FILE*pf;	
+	FILE*pf;	
 	pf=fopen("Datosgenerales","r+");						//ABRIMOS LA LISTA DE DATOS GENERALES PARA LEER 
 	printf("Introduzca el DNI de la persona que busca ");	
 	scanf("%s", comparar);
@@ -97,13 +105,23 @@ void FBuscar()									//ESTA FUCNION BUSCA PACIENTES
 		if(strcmp(Dato.DNI,comparar)==0)					//COMPARAMOS EL STRING INTRODUCIDO CON LOS DE LA LISTA DE DATOS	
 		{
 			printf("El paciente ha sido encontrado \n");   //SI EL STRING COINCIDE EL PACIENTE ESTA O HA ESTADO EN EL HOSPITAL
-		//	Aqui hay que abrir la ficha del paciente encontrado y mostrar las fechas de entrada y/o salida
+			return 1;												//	Aqui hay que abrir la ficha del paciente encontrado y mostrar las fechas de entrada y/o salida
 			break;
 		}
 			
 	}
-	if(strcmp(Dato.DNI,comparar)!=0)					//COMPARAMOS EL STRING INTRODUCIDO CON LOS DE LA LISTA DE DATOS	
-			printf("No ha sido encontrado \n");       //SI EL STRING NO COINCIDE LO DICE
+	if(strcmp(Dato.DNI,comparar)!=0)	
+	{																//COMPARAMOS EL STRING INTRODUCIDO CON LOS DE LA LISTA DE DATOS	
+			printf("No ha sido encontrado \n"); 
+			puts ("\n\250Desea usted pasar a consulta?");
+			scanf ("%c", &tecla);
+			fflush(stdin);
+	
+			if(tecla=='S'||tecla=='s')
+			return 2;
+			else
+			return 0;     											//SI EL STRING NO COINCIDE LO DICE
+	}
 	fclose(pf);	
 }
 
@@ -129,4 +147,4 @@ void LimpiarBufer (void)
 {
 	char c;
 	while((c = getchar())!= EOF && c!= '\n');
-}
+}	
