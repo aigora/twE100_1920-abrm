@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define N 100
+#define M 600
 
 
 typedef struct
@@ -15,8 +16,11 @@ typedef struct
 	char DNI[14];
 }TPaciente;
 
+
 void FIntroduccion();
 int FMenu();
+int FConsulta();
+char FConsultaBuscar();
 int FBuscar();
 int FRepeticion();
 void LimpiarBufer();
@@ -25,17 +29,19 @@ int main()
 {	
 int bucle=1;
 int eleccion;
-int busqueda;
+int busqueda=0;
 	
 	FIntroduccion();
 
 	while(bucle==1)
-	{	eleccion=FMenu();
+	{	if(busqueda!=2)
+		eleccion=FMenu();
 	
 	switch (eleccion)
 	{
 		case 1:
-			printf("\nentrar a consulta\n");
+			FConsulta();
+			busqueda=0;                                      //esto es para cuando se accede a consulta atraves de busqueda
 			break;
 		case 2:
 			busqueda = FBuscar();
@@ -45,12 +51,21 @@ int busqueda;
 			{	
 			break;
 			}
+			break;
+			
 		case 3:
 			printf("\n Entrar a urgencias\n");
 			break;
 	}
+	if(busqueda==2)
+	{
+		bucle=1;
+	}
+	else
+	{
+		bucle=FRepeticion();
+	}
 	
-	bucle=FRepeticion();
 }
 
 return 69;
@@ -80,6 +95,88 @@ int FMenu()							//ESTA FUNCION ABRE EL MENU
   }while(opcion<1||opcion>3);
   
 return opcion;
+}
+int FConsulta()
+{
+	TPaciente paciente;
+	char Fechaentrada[N];
+	char Fechasalida[N];
+	char Diagnostico[M];
+	char Dni;
+
+	printf("\nIntroduzca su nombre\n");
+	scanf("%s",paciente.nombre);
+	fflush(stdin);
+	printf("\nIntroduzca su primer apellido\n");
+	scanf("%s",paciente.apellido1);
+	fflush(stdin);
+	printf("\nIntroduzca su segundo apellido\n");
+	scanf("%s",paciente.apellido2);
+	fflush(stdin);
+	Dni=FConsultaBuscar();
+	//hay que verlo
+	
+	
+	printf("\nFecha de hoy\n");
+	scanf("%s",Fechaentrada);
+	fflush(stdin);
+	printf("\nDiagnostico:\n");
+	gets(Diagnostico);
+	fflush(stdin);
+	printf("\nFecha de salida\n");
+	scanf("%s",Fechasalida);
+	fflush(stdin);
+	
+	
+	FILE*pac;
+	pac=fopen(strcat(paciente.DNI,".txt"),"a");
+	fprintf(pac,"%s\n",paciente.nombre);
+	fprintf(pac,"%s\n",paciente.apellido1);
+    fprintf(pac,"%s\n",paciente.apellido2);   
+	fprintf(pac,"%s\n",paciente.DNI);	
+	fprintf(pac,"%s\n",Fechaentrada);	
+	fprintf(pac,"%s\n",Diagnostico);
+	fprintf(pac,"%s\n",Fechasalida);
+	
+	fclose(pac);
+	
+
+}
+
+char FConsultaBuscar()
+{
+	TPaciente Dato;
+	char comparar[N];
+	char tecla;
+	
+	FILE*pf;	
+	pf=fopen("Datosgenerales","r+");						//ABRIMOS LA LISTA DE DATOS GENERALES PARA LEER 
+	printf("Introduzca su DNI");	
+	scanf("%s", comparar);
+	fflush(stdin);
+	
+									
+	while (!feof (pf))         //LEER HASTA EL FINAL DEL ARCHIVO
+	{
+		
+			
+		fscanf(pf,"%s %s %s %s", Dato.nombre, Dato.apellido1, Dato.apellido2, Dato.DNI);
+		fflush(stdin);
+		
+		if(strcmp(Dato.DNI,comparar)==0)					//COMPARAMOS EL STRING INTRODUCIDO CON LOS DE LA LISTA DE DATOS	
+		{
+			printf("El paciente ya ha estaedo en el centro y este es el historial");   //SI EL STRING COINCIDE EL PACIENTE ESTA O HA ESTADO EN EL HOSPITAL
+			return Dato.DNI;												//	Aqui hay que abrir la ficha del paciente encontrado y mostrar las fechas de entrada y/o salida
+			break;
+		}
+			
+	}
+	if(strcmp(Dato.DNI,comparar)!=0)	
+	{																//COMPARAMOS EL STRING INTRODUCIDO CON LOS DE LA LISTA DE DATOS	
+			printf("Esta es la primera vez que el paciente acude a este hospital \n"); 
+			return Dato.DNI;     										
+	}
+	fclose(pf);	
 }
 
 int FBuscar()									//ESTA FUCNION BUSCA PACIENTES
