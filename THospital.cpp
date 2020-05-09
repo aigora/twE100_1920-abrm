@@ -1,9 +1,9 @@
 //TRABAJO RECEPCION DE HOSPITAL
 /*
 PARTICIPANTES: Mario Sánchez García (55452) 
-			   Brian Tomico Fernández (55487) 
-			   Raul Ricaldi Esquivel (55423) 
-			   Andres Torrejón Palomo (55489)
+	       Brian Tomico Fernández (55487) 
+	       Raul Ricaldi Esquivel (55423) 
+	       Andres Torrejón Palomo (55489)
 */
 //Es necesario tener un documento de texto llamado "Datosgenerales" para que funcione correctamente
 
