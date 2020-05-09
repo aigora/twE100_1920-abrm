@@ -167,7 +167,7 @@ int FConsulta()
 	fclose(pac);
 	
 	FILE*general;
-	general=fopen("Datosgenerales.txt","a");
+	general=fopen("Datosgenerales","a");
 	if(contador==0)
 	{
 	fprintf(general,"\n");
@@ -189,7 +189,7 @@ int FConsultaBuscar(char DNI[N])
 	int mostrar=1;    //esto es para que cuando se llame a la funcion desde aqui no muestre los datos y solo muestre el diagnostico
 	
 	FILE*pf;	
-	pf=fopen("Datosgenerales.txt","r+");						//ABRIMOS LA LISTA DE DATOS GENERALES PARA LEER 
+	pf=fopen("Datosgenerales","r+");						//ABRIMOS LA LISTA DE DATOS GENERALES PARA LEER 
 	fflush(stdin);
 	
 									
@@ -276,7 +276,7 @@ int FBuscar()
 	int	repetir=0;		
 	
 	FILE*pf;	
-	pf=fopen("Datosgenerales.txt","r+");						//ABRIMOS LA LISTA DE DATOS GENERALES PARA LEER 
+	pf=fopen("Datosgenerales","r+");						//ABRIMOS LA LISTA DE DATOS GENERALES PARA LEER 
 	printf("Introduzca el DNI de la persona que busca: ");	
 	scanf("%s", comparar);
 	fflush(stdin);
@@ -336,7 +336,7 @@ void FListado()
 	TPaciente Datos;
 	printf("\nEl listado de pacientes es el siguiente:\n");
 	FILE*Listado;
-	Listado=fopen("Datosgenerales.txt","r+");
+	Listado=fopen("Datosgenerales","r+");
 	while(!feof(Listado))
 	{
 		fscanf(Listado,"%s %s %s %s",Datos.nombre,Datos.apellido1,Datos.apellido2,Datos.DNI);
